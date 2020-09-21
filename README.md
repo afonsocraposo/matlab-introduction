@@ -10,10 +10,15 @@ Luckily, Instituto Superior Técnico provides a detailed tutorial on how to inst
 
 ## Basics
 ### Default Layout
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "MATLAB screen")
+
+
+![alt text](https://raw.githubusercontent.com/Afonsocraposo/matlab-introduction/master/images/default.png "MATLAB screen")
+
 So this is the screen you arrive to when you first launch MATLAB.
 It may seem like a lot of stuff at first, but let's explore it:
+
 ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "MATLAB screen legend")
+
 1. The topbar shows some basic functions like opening a file or creating a new one. You can also access settings and other features.
 2. This panel indicates the directory we're in. This indicates that the current folder is part of the current scope, so any function or file inside the current directory is accessible by our code.
 3. The workspace shows all the variables currently in memory and a detailed view of these can be accessed by double clicking them.
@@ -62,7 +67,9 @@ ans =
 ```
 ### Workspace
 If you've been paying attention, you may have noticed that the panel Workspace has some new information:
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Workspace variables")
+
+![alt text](https://raw.githubusercontent.com/Afonsocraposo/matlab-introduction/master/images/workspace.png "Workspace variables")
+
 Our variable `a` is listed here as well as an `ans` variable. The latter contains the output of the last command ran and can also be used:
 ```matlab
 >> ans-4
@@ -72,14 +79,18 @@ ans =
      1
 ```
 If you double click on a variable on the workspace panel,  you can see a detailed view of it:
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Variable editor")
+
+![alt text](https://raw.githubusercontent.com/Afonsocraposo/matlab-introduction/master/images/variable-editor.png "Variable editor")
+
 Here you can easily edit it.
 
 ### Script Editor
 A script is a text file containing code that our program can read and execute. This very helpful if you want to write code and repeat it,
 To create one, make sure you're one the `HOME` tab and press the button indicating `New Script`.
 This will open a new window:
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Script editor")
+
+![alt text](https://raw.githubusercontent.com/Afonsocraposo/matlab-introduction/master/images/script.png "Script editor")
+
 In this new window you can edit the newly created script and later execute it.
 For example, let's put everything we did on the `Command window` on our new script:
 ```matlab
@@ -130,7 +141,9 @@ ans =
 ```
 ### Current folder
 If you watch the left panel, you can see that you have a file called `example.m` which is the created script. Using this panel, you can manage the files on your current directory.
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Current folder")
+
+![alt text](https://raw.githubusercontent.com/Afonsocraposo/matlab-introduction/master/images/file-manager.png "Current folder")
+
 For example, try duplicating the `example.m` file by right clicking it, selecting copy and the pasting it. You'll create a new file called `Copy_of_example.m`. If you double click it, you'll open it on your Script Editor.
 You can write anything you want on this new script and you won't lose the contents of our first script.
 If you write the name of a script on the `Command window` and press `Enter` you'll ask MATLAB to run that script:
@@ -143,3 +156,4 @@ ans =
 ```
 **Tip:** If you press the `Tab` key while writing on the command window, MATLAB will prompt you with auto-completion.
  
+
