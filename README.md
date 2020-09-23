@@ -18,11 +18,10 @@ Luckily, Instituto Superior Técnico provides a detailed tutorial on how to inst
 
 ## Basics
 ### Default Layout
-![alt text](https://raw.githubusercontent.com/Afonsocraposo/matlab-introduction/master/images/default.png "MATLAB screen")
 
+![alt text](https://raw.githubusercontent.com/Afonsocraposo/matlab-introduction/master/images/default.png "MATLAB screen")<br>
 So this is the screen you arrive to when you first launch MATLAB.
-It may seem like a lot of stuff at first, but let's explore it:
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "MATLAB screen legend")
+It may seem like a lot of stuff at first, but as you can see, some regions are labeled:
 1. The topbar shows some basic functions like opening a file or creating a new one. You can also access settings and other features.
 2. This panel indicates the directory we're in. This indicates that the current folder is part of the current scope, so any function or file inside the current directory is accessible by our code.
 3. The workspace shows all the variables currently in memory and a detailed view of these can be accessed by double clicking them.
@@ -55,7 +54,6 @@ And press `Enter`:
 a =
 
      2
-
 ```
 Now you can use this variable anywhere. Let's use the variable `a` in a simple calculus:
 ```matlab
@@ -69,9 +67,12 @@ ans =
 
      5
 ```
+
+**Tip:** If you press the `Tab` key while writing on the command window, MATLAB will prompt you with auto-completion.
+
 ### Workspace
 If you've been paying attention, you may have noticed that the panel Workspace has some new information:
-![alt text](https://raw.githubusercontent.com/Afonsocraposo/matlab-introduction/master/images/workspace.png "Workspace variables")
+![alt text](https://raw.githubusercontent.com/Afonsocraposo/matlab-introduction/master/images/workspace.png "Workspace variables")<br>
 Our variable `a` is listed here as well as an `ans` variable. The latter contains the output of the last command ran and can also be used:
 ```matlab
 >> ans-4
@@ -81,14 +82,14 @@ ans =
      1
 ```
 If you double click on a variable on the workspace panel,  you can see a detailed view of it:
-![alt text](https://raw.githubusercontent.com/Afonsocraposo/matlab-introduction/master/images/variable-editor.png "Variable editor")
+![alt text](https://raw.githubusercontent.com/Afonsocraposo/matlab-introduction/master/images/variable-editor.png "Variable editor")<br>
 Here you can easily edit it.
 
 ### Script Editor
 A script is a text file containing code that our program can read and execute. This very helpful if you want to write code and repeat it,
 To create one, make sure you're one the `HOME` tab and press the button indicating `New Script`.
 This will open a new window:
-![alt text](https://raw.githubusercontent.com/Afonsocraposo/matlab-introduction/master/images/script.png "Script editor")
+![alt text](https://raw.githubusercontent.com/Afonsocraposo/matlab-introduction/master/images/script.png "Script editor")<br>
 In this new window you can edit the newly created script and later execute it.
 For example, let's put everything we did on the `Command window` on our new script:
 ```matlab
@@ -139,7 +140,7 @@ ans =
 ```
 ### Current folder
 If you watch the left panel, you can see that you have a file called `example.m` which is the created script. Using this panel, you can manage the files on your current directory.
-![alt text](https://raw.githubusercontent.com/Afonsocraposo/matlab-introduction/master/images/file-manager.png "Current folder")
+![alt text](https://raw.githubusercontent.com/Afonsocraposo/matlab-introduction/master/images/file-manager.png "Current folder")<br>
 For example, try duplicating the `example.m` file by right clicking it, selecting copy and the pasting it. You'll create a new file called `Copy_of_example.m`. If you double click it, you'll open it on your Script Editor.
 You can write anything you want on this new script and you won't lose the contents of our first script.
 If you write the name of a script on the `Command window` and press `Enter` you'll ask MATLAB to run that script:
@@ -150,6 +151,89 @@ ans =
 
     10
 ```
-**Tip:** If you press the `Tab` key while writing on the command window, MATLAB will prompt you with auto-completion.
- 
+## Matrices and arrays
+MATLAB makes it really easy working with matrices.
+To create a matrix, you can simply write the following:
+```matlab
+>> a=[1,2,3;4,5,6;7,8,9]
+
+a =
+
+     1     2     3
+     4     5     6
+     7     8     9
+```
+And as you can see a `3x3` matrix is created.
+But imagine you want to create a matrix with `100x200` elements all equal to `0`. Writing one-by-one is not efficient, luckily, MATLAB allows you to create an empty matrix by:
+```matlab
+zeros(100,200);
+```
+If you want to create a matrix with the same number of elements, but all equal to `3`, you can do:
+```matlab
+ones(100,200)*3;
+```
+There's also a function to generate the identity matrix:
+```matlab
+>> eye(3,3)
+
+ans =
+
+     1     0     0
+     0     1     0
+     0     0     1
+```
+Now, if you want to generate an array with numbers from `0` to `10`, you can do it by writing:
+```matlab
+>> 1:10
+
+ans =
+
+     1     2     3     4     5     6     7     8     9    10
+```
+You can also specify the step taken. If you want a step equal to `3`, you can do so:
+```matlab
+>> 1:3:10
+
+ans =
+
+     1     4     7    10
+```
+
+Now let's start doing some simple operations using matrices and arrays.
+You can sum:
+```matlab
+[1,2,3;4,5,6;7,8,9]+ones(3,3)
+
+ans =
+
+     2     3     4
+     5     6     7
+     8     9    10
+```
+And subtract, of course.
+A multiplication (dot product) is done by:
+```matlab
+>> [1,2,3;4,5,6;7,8,9]*ones(3,3)
+
+ans =
+
+     6     6     6
+    15    15    15
+    24    24    24
+```
+If you want to multiply each element by the element in the same position on the other matrix, you can do so:
+```matlab
+>> [1,2,3;4,5,6;7,8,9].*ones(3,3)
+
+ans =
+
+     1     2     3
+     4     5     6
+     7     8     9
+```
+The same applies for division, where:
+```matlab
+A/B = A*inv(B)
+```
+
 
