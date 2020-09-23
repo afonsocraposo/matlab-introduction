@@ -1,4 +1,3 @@
-
 # Introduction to MATLAB
 
 Hello everyone!
@@ -16,7 +15,20 @@ Luckily, Instituto Superior Técnico provides a detailed tutorial on how to inst
     3. [Workspace](https://github.com/Afonsocraposo/matlab-introduction#workspace)
     4. [Script Editor](https://github.com/Afonsocraposo/matlab-introduction#script-editor)
     5. [Current Folder](https://github.com/Afonsocraposo/matlab-introduction#current-folder)
-
+2. [Matrices and Arrays](https://github.com/Afonsocraposo/matlab-introduction#matrices-and-arrays)
+3. [Plots](https://github.com/Afonsocraposo/matlab-introduction#plots)
+4. [Images](https://github.com/Afonsocraposo/matlab-introduction#images)
+5. [Functions](https://github.com/Afonsocraposo/matlab-introduction#functions)
+6. [Conditional Statements](https://github.com/Afonsocraposo/matlab-introduction#conditional-statements)
+7. [Loops](https://github.com/Afonsocraposo/matlab-introduction#loops)
+8. [First Project](https://github.com/Afonsocraposo/matlab-introduction#first-project)
+    1. [Loading the Video](https://github.com/Afonsocraposo/matlab-introduction#loading-the-video)
+    2. [Extracting Features](https://github.com/Afonsocraposo/matlab-introduction#extracting-features)
+    3. [Plotting the Signal](https://github.com/Afonsocraposo/matlab-introduction#plotting-the-signal)
+    4. [Final](https://github.com/Afonsocraposo/matlab-introduction#final)
+    5. [Challenge](https://github.com/Afonsocraposo/matlab-introduction#challenge)
+9. [Conclusion](https://github.com/Afonsocraposo/matlab-introduction#conclusion)
+ 
 ## Basics
 ### Default Layout
 
@@ -131,7 +143,7 @@ a=1+1;
 b=a+3;
 b*2
 ```
-As you can expect, `a=2`and `b=5`, but since we suppressed their output, the only output of our script when ran is:
+As you can expect, `a=2` and `b=5`, but since we suppressed their output, the only output of our script when ran is:
 ```matlab
 >> example
 
@@ -139,7 +151,7 @@ ans =
 
     10
 ```
-### Current folder
+### Current Folder
 If you watch the left panel, you can see that you have a file called `example.m` which is the created script. Using this panel, you can manage the files on your current directory.
 ![](https://raw.githubusercontent.com/Afonsocraposo/matlab-introduction/master/images/file-manager.png "Current folder")<br>
 For example, try duplicating the `example.m` file by right-clicking it, selecting copy, and then pasting it. You'll create a new file called `Copy_of_example.m`. If you double click it, you'll open it on your Script Editor.
@@ -152,7 +164,7 @@ ans =
 
     10
 ```
-## Matrices and arrays
+## Matrices and Arrays
 MATLAB makes it easy to work with matrices.
 To create a matrix, you can simply write the following:
 ```matlab
@@ -299,6 +311,7 @@ subplot(1,2,2)
 bar(x,y)
 ```
 ![](https://raw.githubusercontent.com/Afonsocraposo/matlab-introduction/master/images/subplots.png "Different types of plots")<br>
+
 ## Images
 You can also visualize images and process them.
 An example image can be load and visualized with the following commands:
@@ -318,7 +331,7 @@ imshow(corn_gray(32:64,:))
 ```
 ![](https://raw.githubusercontent.com/Afonsocraposo/matlab-introduction/master/images/images.png "Different images operations")<br>
 
-## Function
+## Functions
 You should organize your code in functions, which make your life a lot easier!
 To create a function, you have to define a name for it, the output it takes and the output it returns.
 Create a new script, paste the following and save it as `example_function.m`. 
@@ -337,7 +350,7 @@ ans =
 
         1156
 ```
-## Conditional statements
+## Conditional Statements
 
 ```matlab
 a=10;
@@ -391,9 +404,9 @@ Which prints every member of the `a` array.
 ## First Project
 You're now ready for a simple project! 
 Imagine you want to extract the [PPG](https://en.wikipedia.org/wiki/Photoplethysmogram) from a video.
-You can record a video of your finger over your phone back camera and flash (remain very still) or you can use the [example]() video.
+You can record a video of your finger covering your phone back camera and flash (remain very still) or you can use the [example](https://github.com/Afonsocraposo/matlab-introduction/blob/master/first-project/ppg.mp4) video.
 
-### Loading the video
+### Loading the Video
 The first step is loading a video.
 ```matlab
 video = VideoReader('ppg.mp4');
@@ -407,7 +420,7 @@ ans =
    217
 ```
 
-### Extracting features
+### Extracting Features
 The next step is extracting the PPG signal from our video. We then need to iterate over each frame and do some processing on it:
 ```matlab
 signal = zeros(1,video.NumFrames);
@@ -428,12 +441,12 @@ end
 ```
 We now end up with a one-dimensional array that corresponds to our PPG.
 
-### Plotting the signal
+### Plotting the Signal
 Now the PPG signal can be simply plotted by doing:
 ```matlab
 plot(ppg)
 ```
-![](https://raw.githubusercontent.com/Afonsocraposo/matlab-introduction/master/images/ppg.png "PPG signal")<br>
+![](https://github.com/Afonsocraposo/matlab-introduction/raw/master/images/ppg.png "PPG signal")<br>
 
 ### Final
 The complete version of this code is:
@@ -450,10 +463,9 @@ plot(signal)
 ```
 This simple code is capable of extracting the PPG signal from a simple video.
 
-#### Challenge
+### Challenge
 Try to calculate the heart rate from the same video.
 
 ## Conclusion
 Now you're capable of independently exploring MATLAB and all of its features.
 If you have any doubt, you can open an issue in this repository, or directly contact me at [afonsocraposo@gmail.com](mailto:afonsocraposo@gmail.com)
-
