@@ -401,7 +401,7 @@ end
 ```
 Which prints every member of the `a` array.
 
-## First Project
+## First Project - PPG from Smartphone Camera
 You're now ready for a simple project! 
 Imagine you want to extract the [PPG](https://en.wikipedia.org/wiki/Photoplethysmogram) from a video.
 You can record a video of your finger covering your phone back camera and flash (remain very still) or you can use the [example](https://github.com/Afonsocraposo/matlab-introduction/blob/master/first-project/ppg.mp4) video.
