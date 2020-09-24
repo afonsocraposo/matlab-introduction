@@ -403,7 +403,7 @@ You can use a `while` loop:
 i=1;
 while i<=10
    disp(i);
-   i=i*1;
+   i=i-1;
 end
 ```
 Which will print every number from 1 to 10.
