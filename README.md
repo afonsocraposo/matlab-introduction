@@ -21,13 +21,14 @@ Luckily, Instituto Superior Técnico provides a detailed tutorial on how to inst
 5. [Functions](https://github.com/Afonsocraposo/matlab-introduction#functions)
 6. [Conditional Statements](https://github.com/Afonsocraposo/matlab-introduction#conditional-statements)
 7. [Loops](https://github.com/Afonsocraposo/matlab-introduction#loops)
-8. [First Project](https://github.com/Afonsocraposo/matlab-introduction#first-project)
+8. [Debugging](https://github.com/Afonsocraposo/matlab-introduction#debugging)
+9. [First Project](https://github.com/Afonsocraposo/matlab-introduction#first-project)
     1. [Loading the Video](https://github.com/Afonsocraposo/matlab-introduction#loading-the-video)
     2. [Extracting Features](https://github.com/Afonsocraposo/matlab-introduction#extracting-features)
     3. [Plotting the Signal](https://github.com/Afonsocraposo/matlab-introduction#plotting-the-signal)
     4. [Final](https://github.com/Afonsocraposo/matlab-introduction#final)
     5. [Challenge](https://github.com/Afonsocraposo/matlab-introduction#challenge)
-9. [Conclusion](https://github.com/Afonsocraposo/matlab-introduction#conclusion)
+10. [Conclusion](https://github.com/Afonsocraposo/matlab-introduction#conclusion)
  
 ## Basics
 ### Default Layout
@@ -215,6 +216,27 @@ a =
      0     4     0
 ```
 Note that when you use `:` you select all the elements of the specified row or column.
+You can check the size of the matrix using the `size` function:
+```matlab
+>> [M,N]=size(a)
+
+M =
+
+     3
+
+
+N =
+
+     3
+```
+You can ommit the output of a function using a `~`:
+```matlab
+>> [M,~]=size(a)
+
+M =
+
+     3
+```
 Now, if you want to generate an array with numbers from `0` to `10`, you can do it by writing:
 ```matlab
 >> 1:10
@@ -400,6 +422,35 @@ for i=a
 end
 ```
 Which prints every member of the `a` array.
+
+
+## Debugging
+MATLAB has a life-saving feature, you can debug your code and verify the program state in each step.
+The debugging mode can only be used when running a script.
+Let's debug the following script:
+```matlab
+function b = debug()
+    a=1:10;
+    b=0;
+    L = size(a);
+    for i=1:L
+        b=(a(i)+a(i+1))/i;
+    end
+end
+```
+To start debugging, click on the `-` next to the line number of the line you which to debug (for example):
+![](https://raw.githubusercontent.com/Afonsocraposo/matlab-introduction/master/images/debug.png "Debug")<br>
+And then press the `Run` button. You'll notice that the program will pause its execution when it arrives at that breakpoint.
+You can now check each declared variable value on the `Workspace` panel and can also use the `Command Window` to execute commands over the program variables during execution:
+```matlab
+K>> a*2
+
+ans =
+
+     2     4     6     8    10    12    14    16    18    20
+```
+You then can go through the code step-by-step by clicking on the `Step` button on the `Top Bar`. The `Workspace` panel will update its variables during each step.
+You can further explore this feature and you'll see how helpful it can be!
 
 ## First Project - PPG from Smartphone Camera
 You're now ready for a simple project! 
