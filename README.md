@@ -154,6 +154,7 @@ ans =
 ```
 ### Current Folder
 If you watch the left panel, you can see that you have a file called `example.m` which is the created script. Using this panel, you can manage the files on your current directory.
+
 ![](https://raw.githubusercontent.com/Afonsocraposo/matlab-introduction/master/images/file-manager.png "Current folder")<br>
 For example, try duplicating the `example.m` file by right-clicking it, selecting copy, and then pasting it. You'll create a new file called `Copy_of_example.m`. If you double click it, you'll open it on your Script Editor.
 You can write anything you want on this new script and you won't lose the contents of our first script.
